@@ -13,7 +13,7 @@ import myself from '@/app/assets/myself.png'
 
 export default function Sidebar() {
   return (
-    <aside className="flex h-screen w-full max-w-72 flex-col space-y-8 py-6 ps-8">
+    <aside className="fixed flex h-screen w-full max-w-72 flex-col space-y-8 py-6 ps-8">
       <Image className="block" src={myself} alt="Logo" width={60} height={60} />
 
       <div className="flex flex-col gap-4 uppercase text-zinc-400">

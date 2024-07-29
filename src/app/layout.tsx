@@ -23,8 +23,12 @@ export default function RootLayout({
         className={`${inter.className} bg-zinc-50 text-zinc-950 antialiased dark:bg-zinc-950 dark:text-zinc-50`}
       >
         <div className="flex">
-          <Sidebar />
-          {children}
+          <div className="relative w-full max-w-72">
+            <Sidebar />
+          </div>
+          <div className="mx-auto w-screen max-w-screen-xl px-14 py-10">
+            {children}
+          </div>
         </div>
       </body>
     </html>
