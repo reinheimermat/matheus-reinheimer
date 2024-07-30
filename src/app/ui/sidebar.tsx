@@ -17,8 +17,8 @@ export default function Sidebar() {
       <Image className="block" src={myself} alt="Logo" width={60} height={60} />
 
       <div className="flex flex-col gap-4 uppercase text-zinc-400">
-        <Link href="/work">Work</Link>
-        <Link href="/About">About</Link>
+        <Link href="/">Work</Link>
+        <Link href="/about">About</Link>
       </div>
 
       <div className="space-y-4">

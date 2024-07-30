@@ -25,7 +25,9 @@ export default function Card({
       <div className="space-y-2">
         <h2 className="text-2xl font-semibold">{title}</h2>
         <span className="text-sm text-zinc-400">{date}</span>
-        <p className="text-sm text-zinc-200">{description}</p>
+        <p className="text-sm text-zinc-800 dark:text-zinc-200">
+          {description}
+        </p>
       </div>
     </div>
   )

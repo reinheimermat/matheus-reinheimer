@@ -26,7 +26,7 @@ export default function RootLayout({
           <div className="relative w-full max-w-72">
             <Sidebar />
           </div>
-          <div className="mx-auto w-screen max-w-screen-xl px-14 py-10">
+          <div className="mx-auto w-screen max-w-screen-xl py-10">
             {children}
           </div>
         </div>
