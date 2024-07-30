@@ -19,6 +19,7 @@ export default function Sidebar() {
       <div className="flex flex-col gap-4 uppercase text-zinc-400">
         <Link href="/">Work</Link>
         <Link href="/about">About</Link>
+        <Link href="/stack">Stack</Link>
       </div>
 
       <div className="space-y-4">
