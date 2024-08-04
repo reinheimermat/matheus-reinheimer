@@ -7,7 +7,10 @@ import projectiva from '@/app/assets/projectiva.jpeg'
 import qi from '@/app/assets/qi.png'
 import rocketseat from '@/app/assets/rocketseat.png'
 
+import { fetchGitHubData } from './api/getGithubApi'
 import Card from './ui/card'
+
+console.log(fetchGitHubData())
 
 export default function Home() {
   return (
