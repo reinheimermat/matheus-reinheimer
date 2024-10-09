@@ -9,7 +9,7 @@ interface CardProps<T> extends React.HTMLAttributes<T> {
 }
 
 function CardRoot({ children, className }: CardProps<HTMLDivElement>) {
-  return <div className={twMerge("space-y-6", className)}>{children}</div>
+  return <div className={twMerge('space-y-6', className)}>{children}</div>
 }
 
 function CardBox({ children, className }: CardProps<HTMLDivElement>) {
@@ -25,7 +25,7 @@ function CardDescription({ children }: CardProps<HTMLTitleElement>) {
 }
 
 function CardText({ children }: CardProps<HTMLTitleElement>) {
-  return <p className="text-zinc-950 text-lg">{children}</p>
+  return <p className="text-lg text-zinc-950">{children}</p>
 }
 
 export const Card = {
