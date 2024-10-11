@@ -6,7 +6,6 @@ import Image from 'next/image'
 import mave from '@/assets/imgs/gremio.jpg'
 import meneghetti from '@/assets/imgs/meneghetti.jpg'
 import projectiva from '@/assets/imgs/projectiva.jpg'
-import { TitleSkeleton } from '@/components/skeletons/title-skeleton'
 import { CardSkeleton } from '@/components/skeletons/card-skeleton'
 
 export default function Home() {
@@ -18,13 +17,10 @@ export default function Home() {
 
   return (
     <div className="space-y-20">
-      {specialRepository ? (
-        <h1 className="mx-auto max-w-[1200px] py-9 text-center text-6xl">
-          {specialRepository.description}
-        </h1>
-      ) : (
-        <TitleSkeleton />
-      )}
+      <h1 className="mx-auto max-w-[1200px] py-9 text-center text-6xl">
+        Hi, I&apos;m Matheus, a Frontend Developer, crafting system and
+        experiences.
+      </h1>
 
       <section className="grid grid-cols-2 gap-6">
         {specialRepository ? (

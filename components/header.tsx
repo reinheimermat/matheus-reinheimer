@@ -7,7 +7,10 @@ export function Header() {
   const links = [
     { href: '/', label: 'Home' },
     { href: '/about', label: 'About' },
-    { href: 'https://linkedin.com/in/reinheimermat', label: 'In' },
+    {
+      href: 'https://linkedin.com/in/reinheimermat',
+      label: 'In',
+    },
     { href: 'https://linkedin.com/in/reinheimermat', label: 'Resume' },
   ]
 
@@ -20,6 +23,7 @@ export function Header() {
           <a
             key={href}
             href={href}
+            target={href.startsWith('http') ? '_blank' : undefined}
             className={`${
               currentPath === href ? 'text-zinc-950' : 'text-zinc-400'
             }`}

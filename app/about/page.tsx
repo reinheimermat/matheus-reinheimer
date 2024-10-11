@@ -1,7 +1,57 @@
+import myself from '@/assets/imgs/myself.png'
+import Image from 'next/image'
+
+// const data = [
+//   {
+//     label: 'React JS',
+//     logo: 'https://cdn.worldvectorlogo.com/logos/react-2.svg',
+//   },
+//   {
+//     label: 'Tailwind CSS',
+//     logo: 'https://cdn.worldvectorlogo.com/logos/tailwindcss.svg',
+//   },
+//   {
+//     label: 'Next JS',
+//     logo: 'https://cdn.worldvectorlogo.com/logos/next-js.svg',
+//   },
+//   {
+//     label: 'Typescript',
+//     logo: 'https://cdn.worldvectorlogo.com/logos/typescript.svg',
+//   },
+//   {
+//     label: 'Javascript',
+//     logo: 'https://cdn.worldvectorlogo.com/logos/javascript-1.svg',
+//   },
+//   {
+//     label: 'Storybook',
+//     logo: 'https://cdn.worldvectorlogo.com/logos/storybook-1.svg',
+//   },
+//   {
+//     label: 'Git',
+//     logo: 'https://cdn.worldvectorlogo.com/logos/git-icon.svg',
+//   },
+//   {
+//     label: 'HTML',
+//     logo: 'https://cdn.worldvectorlogo.com/logos/html5-2.svg',
+//   },
+//   {
+//     label: 'CSS',
+//     logo: 'https://cdn.worldvectorlogo.com/logos/css-5.svg',
+//   },
+//   {
+//     label: 'Figma',
+//     logo: 'https://cdn.worldvectorlogo.com/logos/figma-1.svg',
+//   },
+//   {
+//     label: 'Node JS',
+//     logo: 'https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg',
+//   },
+// ]
+
 export default function About() {
   return (
     <div className="space-y-20">
-      <section className="mt-20 space-y-28">
+      <section className="space-y-28 py-9">
         <article className="flex gap-28">
           <aside className="w-2/3 space-y-6">
             <h1 className="text-6xl">About me</h1>
@@ -43,12 +93,14 @@ export default function About() {
             </div>
           </aside>
           <aside>
-            {/* <Image src="/myself.png" alt="Astro logo" className="w-full rounded-lg" /> */}
+            <Image
+              src={myself}
+              alt="Astro logo"
+              className="w-full rounded-lg"
+            />
           </aside>
         </article>
       </section>
-
-      <h1 className="text-4xl font-bold">Experience</h1>
     </div>
   )
 }
