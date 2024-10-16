@@ -7,6 +7,10 @@ import meneghetti from '@/assets/imgs/meneghetti.jpg'
 import projectiva from '@/assets/imgs/projectiva.jpg'
 import { CardSkeleton } from '@/components/skeletons/card-skeleton'
 import { ArrowUpRight } from 'lucide-react'
+import rocketseat from '@/assets/imgs/rocketseat.jpg'
+import uniasselvi from '@/assets/imgs/uniasselvi.png'
+import qi from '@/assets/imgs/qi.png'
+import alura from '@/assets/imgs/alura.jpg'
 
 export default function Home() {
   const data = useGitHubAutomatedRepos('reinheimermat', 'deploy')
@@ -133,13 +137,18 @@ export default function Home() {
         </Card.Box>
       </Card.Root>
 
-      {/* <section className="mx-auto grid grid-cols-3 gap-16">
-        <Card.Root className="col-span-1">
-          <Image
-            src={mave}
-            alt="Astro logo"
-            className="card-image w-full rounded-lg"
+      <h2 className="text-4xl font-bold">Education</h2>
+
+      <Card.Root className="grid grid-cols-4 gap-14 space-y-0">
+        <Card.Box className="space-y-6">
+          <Card.Image
+            src={rocketseat}
+            alt="Rocketseat code school picture"
+            width={460}
+            height={300}
+            className="h-full max-h-[300px] object-cover"
           />
+
           <Card.Box>
             <Card.Box className="space-y-0">
               <Card.Title>Mave Tecnologia</Card.Title>
@@ -147,49 +156,83 @@ export default function Home() {
                 Frontend Developer, UI/UX Designer
               </Card.Description>
             </Card.Box>
+
             <Card.Text>
               Developed parts of the frontend and UI/UX from several projects,
               focusing on the Grêmio FBPA team.
             </Card.Text>
           </Card.Box>
-        </Card.Root>
-        <Card.Root className="col-span-1">
-          <Image
-            src={projectiva}
-            alt="Astro logo"
-            className="card-image w-full rounded-lg"
+        </Card.Box>
+        <Card.Box className="space-y-6">
+          <Card.Image
+            src={uniasselvi}
+            alt="Rocketseat code school picture"
+            width={460}
+            height={300}
+            className="h-full max-h-[300px] object-cover"
           />
+
           <Card.Box>
             <Card.Box className="space-y-0">
-              <Card.Title>Projectiva</Card.Title>
-              <Card.Description>Frontend Developer </Card.Description>
-            </Card.Box>
-            <Card.Text>
-              I developed modern frontend components implementing technologies
-              like Next.JS, TailwindCSS, and Shadcn UI.
-            </Card.Text>
-          </Card.Box>
-        </Card.Root>
-        <Card.Root className="col-span-1">
-          <Image
-            src={meneghetti}
-            alt="Astro logo"
-            className="card-image w-full rounded-lg"
-          />
-          <Card.Box>
-            <Card.Box className="space-y-0">
-              <Card.Title>Refrigeração Meneghetti</Card.Title>
+              <Card.Title>Mave Tecnologia</Card.Title>
               <Card.Description>
-                Frontend Developer, UI/UX, Freelance
+                Frontend Developer, UI/UX Designer
               </Card.Description>
             </Card.Box>
+
             <Card.Text>
-              Developed the frontend and UI/UX for the company&apos;s website,
-              focusing on the user experience and the company&apos;s identity.
+              Developed parts of the frontend and UI/UX from several projects,
+              focusing on the Grêmio FBPA team.
             </Card.Text>
           </Card.Box>
-        </Card.Root>
-      </section> */}
+        </Card.Box>
+        <Card.Box className="space-y-6">
+          <Card.Image
+            src={qi}
+            alt="Rocketseat code school picture"
+            width={460}
+            height={300}
+            className="h-full max-h-[300px] object-cover"
+          />
+
+          <Card.Box>
+            <Card.Box className="space-y-0">
+              <Card.Title>Mave Tecnologia</Card.Title>
+              <Card.Description>
+                Frontend Developer, UI/UX Designer
+              </Card.Description>
+            </Card.Box>
+
+            <Card.Text>
+              Developed parts of the frontend and UI/UX from several projects,
+              focusing on the Grêmio FBPA team.
+            </Card.Text>
+          </Card.Box>
+        </Card.Box>
+        <Card.Box className="space-y-6">
+          <Card.Image
+            src={alura}
+            alt="Rocketseat code school picture"
+            width={460}
+            height={300}
+            className="h-full max-h-[300px] object-cover"
+          />
+
+          <Card.Box>
+            <Card.Box className="space-y-0">
+              <Card.Title>Mave Tecnologia</Card.Title>
+              <Card.Description>
+                Frontend Developer, UI/UX Designer
+              </Card.Description>
+            </Card.Box>
+
+            <Card.Text>
+              Developed parts of the frontend and UI/UX from several projects,
+              focusing on the Grêmio FBPA team.
+            </Card.Text>
+          </Card.Box>
+        </Card.Box>
+      </Card.Root>
     </div>
   )
 }
