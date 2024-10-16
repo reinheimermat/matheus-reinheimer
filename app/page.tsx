@@ -7,6 +7,7 @@ import mave from '@/assets/imgs/gremio.jpg'
 import meneghetti from '@/assets/imgs/meneghetti.jpg'
 import projectiva from '@/assets/imgs/projectiva.jpg'
 import { CardSkeleton } from '@/components/skeletons/card-skeleton'
+import { ArrowUpRight } from 'lucide-react'
 
 export default function Home() {
   const data = useGitHubAutomatedRepos('reinheimermat', 'deploy')
@@ -27,13 +28,22 @@ export default function Home() {
           <>
             {projectsRepotitories.map((repo) => (
               <Card.Root key={repo.id}>
-                <Image
+                <Card.Image
                   src={repo.banner}
                   alt={repo.name}
-                  width={756}
-                  height={580}
-                  className="w-full rounded-lg"
+                  height={295}
+                  width={384}
                 />
+                <Card.Box className="flex justify-between">
+                  <Card.Box className="space-y-0">
+                    <Card.Title>{repo.name}</Card.Title>
+                    <Card.Description>{repo.description}</Card.Description>
+                  </Card.Box>
+
+                  <Card.ExternalLink href={repo.html_url}>
+                    <ArrowUpRight size={24} />
+                  </Card.ExternalLink>
+                </Card.Box>
               </Card.Root>
             ))}
           </>
