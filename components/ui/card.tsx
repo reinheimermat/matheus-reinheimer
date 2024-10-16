@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image, { StaticImageData } from 'next/image'
 import type React from 'react'
 import type { ReactNode } from 'react'
 import { twMerge } from 'tailwind-merge'
@@ -10,7 +10,7 @@ interface CardProps<T> extends React.HTMLAttributes<T> {
 }
 
 interface CardImageProps extends CardProps<HTMLImageElement> {
-  src: string
+  src: string | StaticImageData
   alt: string
   width: number
   height: number
@@ -19,7 +19,7 @@ interface CardImageProps extends CardProps<HTMLImageElement> {
 function CardRoot({ children, className }: CardProps<HTMLDivElement>) {
   return (
     <div
-      className={twMerge('space-y-4 rounded-3xl bg-zinc-100 p-6', className)}
+      className={twMerge('space-y-4 rounded-[36px] bg-zinc-100 p-6', className)}
     >
       {children}
     </div>

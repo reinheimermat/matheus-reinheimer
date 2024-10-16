@@ -2,7 +2,6 @@
 
 import { Card } from '@/components/ui/card'
 import { useGitHubAutomatedRepos } from 'github-automated-repos'
-import Image from 'next/image'
 import mave from '@/assets/imgs/gremio.jpg'
 import meneghetti from '@/assets/imgs/meneghetti.jpg'
 import projectiva from '@/assets/imgs/projectiva.jpg'
@@ -60,7 +59,79 @@ export default function Home() {
 
       <h2 className="text-4xl font-bold">Work</h2>
 
-      <section className="mx-auto grid grid-cols-3 gap-16">
+      <Card.Root className="grid grid-cols-3 items-start justify-start gap-14 space-y-0 p-10">
+        <Card.Box className="space-y-6">
+          <Card.Image
+            src={mave}
+            alt="Mave Tecnologia picture"
+            width={736}
+            height={580}
+            className="w-full"
+          />
+
+          <Card.Box>
+            <Card.Box className="space-y-0">
+              <Card.Title>Mave Tecnologia</Card.Title>
+              <Card.Description>
+                Frontend Developer, UI/UX Designer
+              </Card.Description>
+            </Card.Box>
+
+            <Card.Text>
+              Developed parts of the frontend and UI/UX from several projects,
+              focusing on the Grêmio FBPA team.
+            </Card.Text>
+          </Card.Box>
+        </Card.Box>
+
+        <Card.Box className="space-y-6">
+          <Card.Image
+            src={projectiva}
+            alt="Projectiva picture"
+            width={736}
+            height={580}
+            className="w-full"
+          />
+
+          <Card.Box>
+            <Card.Box className="space-y-0">
+              <Card.Title>Projectiva</Card.Title>
+              <Card.Description>Frontend Developer</Card.Description>
+            </Card.Box>
+
+            <Card.Text>
+              I developed modern frontend components implementing technologies
+              like Next.JS, TailwindCSS, and Shadcn UI.
+            </Card.Text>
+          </Card.Box>
+        </Card.Box>
+
+        <Card.Box className="space-y-6">
+          <Card.Image
+            src={meneghetti}
+            alt="Refrigeração Meneghetti picture"
+            width={736}
+            height={580}
+            className="w-full"
+          />
+
+          <Card.Box>
+            <Card.Box className="space-y-0">
+              <Card.Title>Refrigeração Meneghetti</Card.Title>
+              <Card.Description>
+                Frontend Developer, UI/UX, Freelance
+              </Card.Description>
+            </Card.Box>
+
+            <Card.Text>
+              Developed the frontend and UI/UX for the company&apos;s website,
+              focusing on the user experience and the company&apos;s identity.
+            </Card.Text>
+          </Card.Box>
+        </Card.Box>
+      </Card.Root>
+
+      {/* <section className="mx-auto grid grid-cols-3 gap-16">
         <Card.Root className="col-span-1">
           <Image
             src={mave}
@@ -116,7 +187,7 @@ export default function Home() {
             </Card.Text>
           </Card.Box>
         </Card.Root>
-      </section>
+      </section> */}
     </div>
   )
 }

@@ -20,7 +20,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} antialiased`}>
+      <body
+        className={`${inter.className} bg-zinc-50 text-zinc-950 antialiased`}
+      >
         <div className="mb-4 flex p-4">
           <div className="w-full max-w-72">
             <Sidebar />
