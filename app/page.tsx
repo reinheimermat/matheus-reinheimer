@@ -139,7 +139,7 @@ export default function Home() {
 
       <h2 className="text-4xl font-bold">Education</h2>
 
-      <Card.Root className="grid grid-cols-4 gap-14 space-y-0">
+      <Card.Root className="grid grid-cols-1 gap-14 space-y-0 p-10 lg:grid-cols-2 2xl:grid-cols-4">
         <Card.Box className="space-y-6">
           <Card.Image
             src={rocketseat}
@@ -215,7 +215,7 @@ export default function Home() {
             alt="Rocketseat code school picture"
             width={460}
             height={300}
-            className="h-full max-h-[300px] object-cover"
+            className="h-full max-h-[300px] object-fill"
           />
 
           <Card.Box>

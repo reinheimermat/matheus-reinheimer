@@ -34,7 +34,7 @@ function CardImage({ src, alt, className, width, height }: CardImageProps) {
       width={width}
       height={height}
       quality={100}
-      className={twMerge('w-full rounded-3xl', className)}
+      className={twMerge('rounded-3xl', className)}
     />
   )
 }
