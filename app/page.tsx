@@ -32,7 +32,7 @@ export default function Home() {
                   alt={repo.name}
                   width={756}
                   height={580}
-                  className="rounded-lg"
+                  className="w-full rounded-lg"
                 />
               </Card.Root>
             ))}
