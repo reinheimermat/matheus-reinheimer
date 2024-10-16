@@ -30,13 +30,15 @@ export default function Home() {
                 <Card.Image
                   src={repo.banner}
                   alt={repo.name}
-                  height={295}
-                  width={384}
+                  height={360}
+                  width={640}
                 />
-                <Card.Box className="flex justify-between">
-                  <Card.Box className="space-y-0">
+                <Card.Box className="flex items-center justify-between gap-6 space-y-0">
+                  <Card.Box className="space-y-0 p-2">
                     <Card.Title>{repo.name}</Card.Title>
-                    <Card.Description>{repo.description}</Card.Description>
+                    {repo.description && (
+                      <Card.Description>{repo.description}</Card.Description>
+                    )}
                   </Card.Box>
 
                   <Card.ExternalLink href={repo.html_url}>
@@ -110,8 +112,8 @@ export default function Home() {
           <Card.Image
             src={meneghetti}
             alt="Refrigeração Meneghetti picture"
-            width={736}
-            height={580}
+            width={1920}
+            height={1080}
             className="w-full"
           />
 

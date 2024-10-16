@@ -44,9 +44,9 @@ function CardExternalLink({ href, children }: CardProps<HTMLAnchorElement>) {
     <a
       href={href}
       target="_blank"
-      className="flex items-center justify-center rounded-full bg-lime-300 p-2"
+      className="my-auto flex size-12 items-center justify-center overflow-hidden rounded-full bg-lime-300 hover:bg-lime-400"
     >
-      {children}
+      <div className="">{children}</div>
     </a>
   )
 }

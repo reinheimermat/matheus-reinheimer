@@ -63,7 +63,7 @@ export function Sidebar() {
             key={index}
             href={href}
             className={twMerge(
-              'flex items-center gap-2 rounded-lg px-3 py-2 text-zinc-950 hover:bg-zinc-200',
+              'flex items-center gap-2 rounded-lg px-3 py-2 text-zinc-950 transition-colors hover:bg-zinc-200 hover:transition-colors active:bg-zinc-300',
               currentPath === href && 'bg-zinc-200 hover:bg-zinc-300',
             )}
           >
