@@ -15,14 +15,14 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { twMerge } from 'tailwind-merge'
 
-const links = [
+export const links = [
   { href: '/', label: 'Home', icon: <House size={14} /> },
   { href: '/about', label: 'About', icon: <UserRound size={14} /> },
   { href: '/skills', label: 'Skills', icon: <Flame size={14} /> },
   { href: '/resume', label: 'Resume', icon: <FileUser size={14} /> },
 ]
 
-const externalLinks = [
+export const externalLinks = [
   {
     href: 'https://github.com/reinheimermat',
     label: 'Github',
@@ -44,7 +44,7 @@ export function Sidebar() {
   const currentPath = usePathname()
 
   return (
-    <aside className="fixed flex h-[calc(100vh-32px)] w-full max-w-72 flex-col gap-5 rounded-bl-lg rounded-br-[36px] rounded-tl-[36px] rounded-tr-lg bg-zinc-100 px-2 py-6 text-sm">
+    <aside className="fixed hidden h-[calc(100vh-32px)] w-full flex-col gap-5 rounded-bl-lg rounded-br-[36px] rounded-tl-[36px] rounded-tr-lg bg-zinc-100 px-2 py-6 text-sm md:flex md:w-1/3 lg:max-w-72">
       <div className="flex items-center gap-2">
         <Image
           src="https://github.com/reinheimermat.png"

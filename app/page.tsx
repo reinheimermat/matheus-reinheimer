@@ -20,13 +20,13 @@ export default function Home() {
   )
 
   return (
-    <div className="space-y-20">
-      <h1 className="mx-auto max-w-[1200px] py-9 text-center text-6xl">
-        Hi, I&apos;m Matheus, a Frontend Developer, crafting system and
-        experiences.
+    <div className="space-y-10 md:space-y-20">
+      <h1 className="mx-auto py-9 text-center md:text-2xl lg:text-4xl xl:text-6xl">
+        Hi, I&apos;m Matheus, a Frontend Developer, <br />
+        crafting system and experiences.
       </h1>
 
-      <section className="grid grid-cols-2 gap-6">
+      <section className="grid grid-cols-1 gap-6 xl:grid-cols-2">
         {specialRepository ? (
           <>
             {projectsRepotitories.map((repo) => (
@@ -37,7 +37,7 @@ export default function Home() {
                   height={360}
                   width={640}
                 />
-                <Card.Box className="flex items-center justify-between gap-6 space-y-0">
+                <Card.Box className="flex items-center justify-between gap-2 space-y-0">
                   <Card.Box className="space-y-0 p-2">
                     <Card.Title>{repo.name}</Card.Title>
                     {repo.description && (
@@ -63,9 +63,9 @@ export default function Home() {
         )}
       </section>
 
-      <h2 className="text-4xl font-bold">Work</h2>
+      <h2 className="text-2xl font-bold md:text-4xl">Work</h2>
 
-      <Card.Root className="grid grid-cols-3 items-start justify-start gap-14 space-y-0 p-10">
+      <Card.Root className="grid grid-cols-1 items-start justify-start gap-14 space-y-0 md:p-10 lg:grid-cols-2 xl:grid-cols-3">
         <Card.Box className="space-y-6">
           <Card.Image
             src={mave}
@@ -83,7 +83,7 @@ export default function Home() {
               </Card.Description>
             </Card.Box>
 
-            <Card.Text>
+            <Card.Text className="text-sm">
               Developed parts of the frontend and UI/UX from several projects,
               focusing on the Grêmio FBPA team.
             </Card.Text>
@@ -105,7 +105,7 @@ export default function Home() {
               <Card.Description>Frontend Developer</Card.Description>
             </Card.Box>
 
-            <Card.Text>
+            <Card.Text className="text-sm">
               I developed modern frontend components implementing technologies
               like Next.JS, TailwindCSS, and Shadcn UI.
             </Card.Text>
@@ -129,7 +129,7 @@ export default function Home() {
               </Card.Description>
             </Card.Box>
 
-            <Card.Text>
+            <Card.Text className="text-sm">
               Developed the frontend and UI/UX for the company&apos;s website,
               focusing on the user experience and the company&apos;s identity.
             </Card.Text>
@@ -137,52 +137,50 @@ export default function Home() {
         </Card.Box>
       </Card.Root>
 
-      <h2 className="text-4xl font-bold">Education</h2>
+      <h2 className="text-2xl font-bold md:text-4xl">Education</h2>
 
-      <Card.Root className="grid grid-cols-1 gap-14 space-y-0 p-10 lg:grid-cols-2 2xl:grid-cols-4">
+      <Card.Root className="grid grid-cols-2 gap-14 space-y-0 md:grid-cols-2 md:p-10 xl:grid-cols-4">
         <Card.Box className="space-y-6">
           <Card.Image
             src={rocketseat}
             alt="Rocketseat code school picture"
             width={460}
             height={300}
-            className="h-full max-h-[300px] object-cover"
+            className="max-h-[300px] object-cover"
           />
 
           <Card.Box>
             <Card.Box className="space-y-0">
-              <Card.Title>Mave Tecnologia</Card.Title>
-              <Card.Description>
-                Frontend Developer, UI/UX Designer
-              </Card.Description>
+              <Card.Title>Rocketseat</Card.Title>
+              <Card.Description>Code School | 2024 - moment</Card.Description>
             </Card.Box>
 
-            <Card.Text>
-              Developed parts of the frontend and UI/UX from several projects,
-              focusing on the Grêmio FBPA team.
+            <Card.Text className="text-sm">
+              Courses focused on frontend development, UI/UX, and technologies
+              like React, Next.JS, and TailwindCSS.
             </Card.Text>
           </Card.Box>
         </Card.Box>
         <Card.Box className="space-y-6">
           <Card.Image
             src={uniasselvi}
-            alt="Rocketseat code school picture"
+            alt="Uniasselvi university picture"
             width={460}
             height={300}
-            className="h-full max-h-[300px] object-cover"
+            className="max-h-[300px] object-cover"
           />
 
           <Card.Box>
             <Card.Box className="space-y-0">
-              <Card.Title>Mave Tecnologia</Card.Title>
+              <Card.Title>Uniasselvi</Card.Title>
               <Card.Description>
-                Frontend Developer, UI/UX Designer
+                University | jan/2024 - moment
               </Card.Description>
             </Card.Box>
 
-            <Card.Text>
-              Developed parts of the frontend and UI/UX from several projects,
-              focusing on the Grêmio FBPA team.
+            <Card.Text className="text-sm">
+              Graduating in Internet Systems, focusing on the development of
+              systems and web.
             </Card.Text>
           </Card.Box>
         </Card.Box>
@@ -192,20 +190,18 @@ export default function Home() {
             alt="Rocketseat code school picture"
             width={460}
             height={300}
-            className="h-full max-h-[300px] object-cover"
+            className="max-h-[300px] object-cover"
           />
 
           <Card.Box>
             <Card.Box className="space-y-0">
-              <Card.Title>Mave Tecnologia</Card.Title>
-              <Card.Description>
-                Frontend Developer, UI/UX Designer
-              </Card.Description>
+              <Card.Title>QI</Card.Title>
+              <Card.Description>University | 2020 - 2022</Card.Description>
             </Card.Box>
 
-            <Card.Text>
-              Developed parts of the frontend and UI/UX from several projects,
-              focusing on the Grêmio FBPA team.
+            <Card.Text className="text-sm">
+              IT Technician, focused on the development of systems and web. I
+              learned about programming logic, databases, and web development.
             </Card.Text>
           </Card.Box>
         </Card.Box>
@@ -213,22 +209,22 @@ export default function Home() {
           <Card.Image
             src={alura}
             alt="Rocketseat code school picture"
-            width={460}
+            width={300}
             height={300}
-            className="h-full max-h-[300px] object-fill"
+            className="max-h-[300px] w-full object-fill"
           />
 
           <Card.Box>
             <Card.Box className="space-y-0">
-              <Card.Title>Mave Tecnologia</Card.Title>
+              <Card.Title>Alura</Card.Title>
               <Card.Description>
-                Frontend Developer, UI/UX Designer
+                Technology School | 2023 - 2024
               </Card.Description>
             </Card.Box>
 
-            <Card.Text>
-              Developed parts of the frontend and UI/UX from several projects,
-              focusing on the Grêmio FBPA team.
+            <Card.Text className="text-sm">
+              Courses focused on frontend development, UI/UX, and technologies
+              like React, Next.JS, and TailwindCSS.
             </Card.Text>
           </Card.Box>
         </Card.Box>

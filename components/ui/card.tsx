@@ -1,3 +1,4 @@
+import { cn } from '@/lib/utils'
 import Image, { StaticImageData } from 'next/image'
 import type React from 'react'
 import type { ReactNode } from 'react'
@@ -44,9 +45,9 @@ function CardExternalLink({ href, children }: CardProps<HTMLAnchorElement>) {
     <a
       href={href}
       target="_blank"
-      className="my-auto flex size-12 items-center justify-center overflow-hidden rounded-full bg-lime-300 hover:bg-lime-400"
+      className="my-auto flex items-center justify-center rounded-full bg-lime-300 p-2 hover:bg-lime-400"
     >
-      <div className="">{children}</div>
+      <div>{children}</div>
     </a>
   )
 }
@@ -63,8 +64,8 @@ function CardDescription({ children }: CardProps<HTMLTitleElement>) {
   return <h3 className="text-sm text-zinc-500">{children}</h3>
 }
 
-function CardText({ children }: CardProps<HTMLTitleElement>) {
-  return <p className="text-zinc-700">{children}</p>
+function CardText({ children, className }: CardProps<HTMLTitleElement>) {
+  return <p className={cn('text-zinc-700', className)}>{children}</p>
 }
 
 export const Card = {
