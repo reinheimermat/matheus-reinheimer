@@ -52,10 +52,10 @@ export default function About() {
   return (
     <div className="space-y-20">
       <section className="space-y-28 py-9">
-        <article className="flex gap-28">
-          <aside className="w-2/3 space-y-6">
+        <article className="flex flex-col gap-28 xl:flex-row">
+          <aside className="space-y-6 xl:w-2/3">
             <h1 className="text-6xl">About me</h1>
-            <p>
+            <p className="text-justify">
               I recently graduated from the Carnegie Mellon University Master of
               Entertainment Technology program and joined Duolingo as a product
               designer.I am a highly motivated and enthusiastic Product Designer
@@ -92,13 +92,11 @@ export default function About() {
               </div>
             </div>
           </aside>
-          <aside>
-            <Image
-              src={myself}
-              alt="Astro logo"
-              className="w-full rounded-lg"
-            />
-          </aside>
+          <Image
+            src={myself}
+            alt="Astro logo"
+            className="w-1/4 rounded-lg xl:w-full"
+          />
         </article>
       </section>
     </div>
