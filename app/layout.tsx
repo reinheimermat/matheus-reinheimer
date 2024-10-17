@@ -25,7 +25,7 @@ export default function RootLayout({
         className={`${inter.className} bg-zinc-50 text-zinc-950 antialiased`}
       >
         <div className="relative md:mb-4 md:flex md:p-4">
-          <div className="hidden md:w-full md:max-w-[304px]">
+          <div className="hidden md:block md:w-full md:max-w-[304px]">
             <Sidebar />
           </div>
           <div className="md:hidden">

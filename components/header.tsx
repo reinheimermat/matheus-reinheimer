@@ -20,7 +20,7 @@ export function Header() {
     <header className={twMerge('flex justify-between', !isOpen && 'px-3 py-5')}>
       <a href="/">Matheus Reinheimer</a>
 
-      <button onClick={handleMenuOpen}>
+      <button onClick={handleMenuOpen} type="button">
         <Menu size={24} />
       </button>
 
@@ -38,15 +38,15 @@ export function Header() {
               <span>Reinheimer&apos;s Portfolio</span>
             </div>
 
-            <button onClick={handleMenuOpen}>
+            <button onClick={handleMenuOpen} type="button">
               <X size={24} />
             </button>
           </div>
 
           <div className="flex flex-col gap-0.5">
-            {links.map(({ href, label, icon }, index) => (
+            {links.map(({ href, label, icon }) => (
               <Link
-                key={index}
+                key={href}
                 href={href}
                 onClick={handleMenuOpen}
                 className={twMerge(
@@ -64,9 +64,9 @@ export function Header() {
 
           <div className="flex flex-col">
             <div className="space-y-0.5">
-              {externalLinks.map(({ href, label, icon }, index) => (
+              {externalLinks.map(({ href, label, icon }) => (
                 <Link
-                  key={index}
+                  key={href}
                   href={href}
                   target="_blank"
                   className="flex items-center gap-2 rounded-lg px-3 py-2 hover:bg-zinc-200 active:bg-zinc-300"

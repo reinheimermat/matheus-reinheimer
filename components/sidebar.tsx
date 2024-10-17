@@ -58,9 +58,9 @@ export function Sidebar() {
       </div>
 
       <div className="flex flex-col gap-0.5">
-        {links.map(({ href, label, icon }, index) => (
+        {links.map(({ href, label, icon }) => (
           <Link
-            key={index}
+            key={href}
             href={href}
             className={twMerge(
               'flex items-center gap-2 rounded-lg px-3 py-2 text-zinc-950 transition-colors hover:bg-zinc-200 hover:transition-colors active:bg-zinc-300',
@@ -77,9 +77,9 @@ export function Sidebar() {
 
       <div className="flex flex-col">
         <div className="space-y-0.5">
-          {externalLinks.map(({ href, label, icon }, index) => (
+          {externalLinks.map(({ href, label, icon }) => (
             <Link
-              key={index}
+              key={href}
               href={href}
               target="_blank"
               className="flex items-center gap-2 rounded-lg px-3 py-2 hover:bg-zinc-200 active:bg-zinc-300"

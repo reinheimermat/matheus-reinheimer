@@ -1,5 +1,5 @@
 import { cn } from '@/lib/utils'
-import Image, { StaticImageData } from 'next/image'
+import Image, { type StaticImageData } from 'next/image'
 import type React from 'react'
 import type { ReactNode } from 'react'
 import { twMerge } from 'tailwind-merge'
@@ -35,7 +35,7 @@ function CardImage({ src, alt, className, width, height }: CardImageProps) {
       width={width}
       height={height}
       quality={100}
-      className={twMerge('rounded-3xl', className)}
+      className={twMerge('w-full rounded-3xl', className)}
     />
   )
 }
@@ -45,6 +45,7 @@ function CardExternalLink({ href, children }: CardProps<HTMLAnchorElement>) {
     <a
       href={href}
       target="_blank"
+      rel="noreferrer"
       className="my-auto flex items-center justify-center rounded-full bg-lime-300 p-2 hover:bg-lime-400"
     >
       <div>{children}</div>
