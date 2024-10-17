@@ -92,11 +92,7 @@ export default function About() {
               </div>
             </div>
           </aside>
-          <Image
-            src={myself}
-            alt="Astro logo"
-            className="w-1/4 rounded-lg xl:w-full"
-          />
+          <Image src={myself} alt="Astro logo" className="w-1/4 rounded-lg" />
         </article>
       </section>
     </div>
