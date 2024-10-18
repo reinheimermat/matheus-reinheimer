@@ -188,8 +188,8 @@ const plugins = [
 export default function Skills() {
   return (
     <main className="space-y-10 py-9">
-      <section className="w-1/2 space-y-6">
-        <h1 className="text-6xl">About me</h1>
+      <section className="space-y-6 xl:w-1/2">
+        <h1 className="text-6xl">My Skills</h1>
         <p className="text-justify">
           Explore the technologies and tools that power my development journey.
           I carefully choose and leverage these tools to create robust,
