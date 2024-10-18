@@ -17,7 +17,7 @@ export function Header() {
   }
 
   return (
-    <header className={twMerge('flex justify-between', !isOpen && 'px-3 py-5')}>
+    <header className={twMerge('flex justify-between', !isOpen && 'px-3 py-6')}>
       <a href="/">Matheus Reinheimer</a>
 
       <button onClick={handleMenuOpen} type="button">
@@ -25,7 +25,7 @@ export function Header() {
       </button>
 
       {isOpen && (
-        <div className="absolute flex h-full w-screen flex-col gap-6 bg-zinc-100 px-2 py-6">
+        <div className="absolute z-10 flex h-full w-screen flex-col gap-6 bg-zinc-100 px-2 py-6">
           <div className="flex justify-between">
             <div className="flex items-center gap-2">
               <Image
