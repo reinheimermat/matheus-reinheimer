@@ -1,53 +1,6 @@
 import myself from '@/assets/imgs/myself.png'
 import Image from 'next/image'
 
-// const data = [
-//   {
-//     label: 'React JS',
-//     logo: 'https://cdn.worldvectorlogo.com/logos/react-2.svg',
-//   },
-//   {
-//     label: 'Tailwind CSS',
-//     logo: 'https://cdn.worldvectorlogo.com/logos/tailwindcss.svg',
-//   },
-//   {
-//     label: 'Next JS',
-//     logo: 'https://cdn.worldvectorlogo.com/logos/next-js.svg',
-//   },
-//   {
-//     label: 'Typescript',
-//     logo: 'https://cdn.worldvectorlogo.com/logos/typescript.svg',
-//   },
-//   {
-//     label: 'Javascript',
-//     logo: 'https://cdn.worldvectorlogo.com/logos/javascript-1.svg',
-//   },
-//   {
-//     label: 'Storybook',
-//     logo: 'https://cdn.worldvectorlogo.com/logos/storybook-1.svg',
-//   },
-//   {
-//     label: 'Git',
-//     logo: 'https://cdn.worldvectorlogo.com/logos/git-icon.svg',
-//   },
-//   {
-//     label: 'HTML',
-//     logo: 'https://cdn.worldvectorlogo.com/logos/html5-2.svg',
-//   },
-//   {
-//     label: 'CSS',
-//     logo: 'https://cdn.worldvectorlogo.com/logos/css-5.svg',
-//   },
-//   {
-//     label: 'Figma',
-//     logo: 'https://cdn.worldvectorlogo.com/logos/figma-1.svg',
-//   },
-//   {
-//     label: 'Node JS',
-//     logo: 'https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg',
-//   },
-// ]
-
 export default function About() {
   return (
     <div className="space-y-20">
