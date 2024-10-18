@@ -199,7 +199,7 @@ export default function Skills() {
       <section className="space-y-6">
         <h2 className="text-2xl font-bold">Front-end</h2>
 
-        <div className="flex flex-wrap items-center gap-3">
+        <div className="grid grid-cols-2 items-center gap-3 md:flex md:flex-wrap">
           {frontend.map((skill) => (
             <Badge key={skill.label} {...skill} />
           ))}
@@ -209,7 +209,7 @@ export default function Skills() {
       <section className="space-y-6">
         <h2 className="text-2xl font-bold">Testing</h2>
 
-        <div className="flex flex-wrap items-center gap-3">
+        <div className="grid grid-cols-2 items-center gap-3 md:flex md:flex-wrap">
           {testing.map((skill) => (
             <Badge key={skill.label} {...skill} />
           ))}
@@ -219,7 +219,7 @@ export default function Skills() {
       <section className="space-y-6">
         <h2 className="text-2xl font-bold">Version control</h2>
 
-        <div className="flex flex-wrap items-center gap-3">
+        <div className="grid grid-cols-2 items-center gap-3 md:flex md:flex-wrap">
           {versionControl.map((skill) => (
             <Badge key={skill.label} {...skill} />
           ))}
@@ -229,7 +229,7 @@ export default function Skills() {
       <section className="space-y-6">
         <h2 className="text-2xl font-bold">Plugins</h2>
 
-        <div className="flex flex-wrap items-center gap-3">
+        <div className="grid grid-cols-2 items-center gap-3 md:flex md:flex-wrap">
           {plugins.map((skill) => (
             <Badge key={skill.label} {...skill} />
           ))}
@@ -239,7 +239,7 @@ export default function Skills() {
       <section className="space-y-6">
         <h2 className="text-2xl font-bold">Apps</h2>
 
-        <div className="flex flex-wrap items-center gap-3">
+        <div className="grid grid-cols-2 items-center gap-3 md:flex md:flex-wrap">
           {apps.map((skill) => (
             <Badge key={skill.label} {...skill} />
           ))}
