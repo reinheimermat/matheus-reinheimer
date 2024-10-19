@@ -1,19 +1,18 @@
 'use client'
 
-import { Worker, Viewer } from '@react-pdf-viewer/core'
+import '@react-pdf-viewer/core/lib/styles/index.css'
+import '@react-pdf-viewer/default-layout/lib/styles/index.css'
+import { Card } from './card'
 
-interface PdfviewerProps {
-  pdfUrl: string
-}
-
-export function Pdfviewer({ pdfUrl }: PdfviewerProps) {
+export function PdfViewer() {
   return (
-    <div style={{ height: '750px' }}>
-      <Worker
-        workerUrl={`https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js`}
-      >
-        <Viewer fileUrl={pdfUrl} />
-      </Worker>
-    </div>
+    <Card.Root className="mb-3 h-[calc(100vh-32px)] md:p-10">
+      <iframe
+        src="https://docs.google.com/gview?url=http://infolab.stanford.edu/pub/papers/google.pdf&embedded=true"
+        width="100%"
+        height="100%"
+        className="rounded-3xl"
+      ></iframe>
+    </Card.Root>
   )
 }
