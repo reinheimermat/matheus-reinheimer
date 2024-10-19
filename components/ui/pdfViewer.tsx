@@ -8,7 +8,7 @@ export function PdfViewer() {
   return (
     <Card.Root className="mb-3 h-[calc(100vh-32px)] md:p-10">
       <iframe
-        src="https://docs.google.com/gview?url=http://infolab.stanford.edu/pub/papers/google.pdf&embedded=true"
+        src="https://docs.google.com/gview?url=https://matheusreinheimer.vercel.app/resume.pdf&embedded=true"
         width="100%"
         height="100%"
         className="rounded-3xl"
