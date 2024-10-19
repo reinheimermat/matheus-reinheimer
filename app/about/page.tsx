@@ -9,17 +9,15 @@ export default function About() {
           <aside className="space-y-6 xl:w-2/3">
             <h1 className="text-6xl">About me</h1>
             <p className="text-justify">
-              I recently graduated from the Carnegie Mellon University Master of
-              Entertainment Technology program and joined Duolingo as a product
-              designer.I am a highly motivated and enthusiastic Product Designer
-              with a strong passion for 3D and AR/VR design. I enjoy combining
-              my artistic background with my technical skills to create
-              innovative and creative solutions. I have experience developing
-              visionary concepts, conducting user research, and establishing
-              product frameworks through the use of animated and interactive
-              prototypes. Possessing a positive attitude and a growth-oriented
-              mindset, I am constantly seeking opportunities to expand my
-              knowledge and skills as a designer.
+              I am a highly motivated and enthusiastic Front-end Developer with
+              a strong passion for development and UI design. I enjoy combining
+              my technology passion background with my technical skills to
+              create innovative and creative solutions. I have experience
+              developing modern web apps, creating user experience layouts, and
+              the use of modern frameworks like React and Next.js. Possessing a
+              positive attitude and a growth-oriented mindset, I am constantly
+              seeking opportunities to expand my knowledge and skills as a
+              developer.
             </p>
 
             <div className="flex gap-11">
