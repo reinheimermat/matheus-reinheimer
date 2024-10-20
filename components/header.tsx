@@ -2,36 +2,48 @@
 
 import { ExternalLink, Menu, X } from 'lucide-react'
 import Image from 'next/image'
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import { twMerge } from 'tailwind-merge'
 import { externalLinks, links } from './sidebar'
 import Link from 'next/link'
 import { ThemeToggle } from './ui/theme-toggle'
-import { useState } from 'react'
+import { useEffect } from 'react'
 
 export function Header() {
   const currentPath = usePathname()
-  const [isOpen, setIsOpen] = useState(false)
+  const router = useRouter()
+  const searchParams = useSearchParams()
+
+  const isMenuOpenInUrl = searchParams.get('menu') === 'open'
+
+  useEffect(() => {
+    document.body.style.overflow = isMenuOpenInUrl ? 'hidden' : 'auto'
+  }, [isMenuOpenInUrl])
 
   function handleMenuOpen() {
-    setIsOpen((prev) => !prev)
+    const newMenuState = isMenuOpenInUrl ? null : 'open'
 
-    if (isOpen) {
-      document.body.style.overflow = 'auto'
+    if (newMenuState) {
+      router.push(`?menu=${newMenuState}`)
     } else {
-      document.body.style.overflow = 'hidden'
+      router.push(currentPath)
     }
   }
 
   return (
-    <header className={twMerge('flex justify-between', !isOpen && 'px-3 py-6')}>
+    <header
+      className={twMerge(
+        'flex justify-between',
+        !isMenuOpenInUrl && 'px-3 py-6',
+      )}
+    >
       <a href="/">Matheus Reinheimer</a>
 
       <button onClick={handleMenuOpen} type="button">
         <Menu size={24} />
       </button>
 
-      {isOpen && (
+      {isMenuOpenInUrl && (
         <div className="absolute z-10 flex h-screen w-screen flex-col gap-6 bg-zinc-100 px-2 py-6 dark:bg-zinc-900">
           <div className="flex justify-between">
             <div className="flex items-center gap-2 px-1">
