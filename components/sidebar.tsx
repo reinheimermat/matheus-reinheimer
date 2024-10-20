@@ -45,7 +45,7 @@ export function Sidebar() {
   const currentPath = usePathname()
 
   return (
-    <aside className="fixed hidden h-[calc(100vh-32px)] flex-col gap-5 rounded-bl-lg rounded-br-[36px] rounded-tl-[36px] rounded-tr-lg border border-zinc-200 bg-zinc-100 px-4 py-6 text-sm shadow-shape dark:border-zinc-800 dark:bg-zinc-900 md:flex md:w-auto lg:w-1/4 xl:max-w-72">
+    <aside className="fixed hidden h-[calc(100vh-32px)] flex-col gap-5 rounded-bl-lg rounded-br-[36px] rounded-tl-[36px] rounded-tr-lg bg-zinc-100 px-4 py-6 text-sm dark:bg-zinc-900 dark:shadow-shape md:flex md:w-auto lg:w-1/4 xl:max-w-72">
       <div className="flex items-center gap-2">
         <Image
           src="https://github.com/reinheimermat.png"

@@ -21,7 +21,7 @@ function CardRoot({ children, className }: CardProps<HTMLDivElement>) {
   return (
     <div
       className={twMerge(
-        'shadow-shape space-y-4 rounded-[36px] border border-zinc-200 bg-zinc-100 p-6 shadow-zinc-900 dark:border-zinc-800 dark:bg-zinc-900',
+        'space-y-4 rounded-[36px] bg-zinc-100 p-6 dark:bg-zinc-900 dark:shadow-shape',
         className,
       )}
     >
