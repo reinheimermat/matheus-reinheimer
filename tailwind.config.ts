@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 import type { Config } from 'tailwindcss'
 
 const config: Config = {
@@ -15,6 +16,9 @@ const config: Config = {
       },
     },
   },
-  plugins: [require('tailwindcss-animate')],
+  plugins: [
+    require('tailwind-scrollbar')({ preferredStrategy: 'pseudoelements' }),
+    require('tailwindcss-animate'),
+  ],
 }
 export default config

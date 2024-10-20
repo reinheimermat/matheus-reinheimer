@@ -21,7 +21,10 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html
+      lang="en"
+      className="scrollbar-thin scrollbar-thumb-zinc-800 hover:scrollbar-thumb-zinc-700"
+    >
       <body
         className={`${inter.className} bg-zinc-50 text-zinc-950 antialiased dark:bg-zinc-950 dark:text-zinc-50`}
       >
