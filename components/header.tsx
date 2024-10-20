@@ -3,10 +3,11 @@
 import { ExternalLink, Menu, X } from 'lucide-react'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
-import { useState } from 'react'
 import { twMerge } from 'tailwind-merge'
 import { externalLinks, links } from './sidebar'
 import Link from 'next/link'
+import { ThemeToggle } from './ui/theme-toggle'
+import { useState } from 'react'
 
 export function Header() {
   const currentPath = usePathname()
@@ -14,6 +15,12 @@ export function Header() {
 
   function handleMenuOpen() {
     setIsOpen((prev) => !prev)
+
+    if (isOpen) {
+      document.body.style.overflow = 'auto'
+    } else {
+      document.body.style.overflow = 'hidden'
+    }
   }
 
   return (
@@ -25,9 +32,9 @@ export function Header() {
       </button>
 
       {isOpen && (
-        <div className="absolute z-10 flex h-full w-screen flex-col gap-6 bg-zinc-100 px-2 py-6">
+        <div className="absolute z-10 flex h-screen w-screen flex-col gap-6 bg-zinc-100 px-2 py-6 dark:bg-zinc-900">
           <div className="flex justify-between">
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 px-1">
               <Image
                 src="https://github.com/reinheimermat.png"
                 alt="My Image"
@@ -50,8 +57,9 @@ export function Header() {
                 href={href}
                 onClick={handleMenuOpen}
                 className={twMerge(
-                  'flex items-center gap-2 rounded-lg px-3 py-2 text-zinc-950 transition-colors hover:bg-zinc-200 hover:transition-colors active:bg-zinc-300',
-                  currentPath === href && 'bg-zinc-200 hover:bg-zinc-300',
+                  'flex items-center gap-2 rounded-lg px-3 py-2 transition-colors hover:bg-zinc-200 hover:transition-colors active:bg-zinc-300 dark:hover:bg-zinc-800 dark:active:bg-zinc-700',
+                  currentPath === href &&
+                    'bg-zinc-200 hover:bg-zinc-300 dark:bg-zinc-800 dark:hover:bg-zinc-700',
                 )}
               >
                 {icon}
@@ -60,7 +68,7 @@ export function Header() {
             ))}
           </div>
 
-          <h2 className="px-3">Social</h2>
+          <h2 className="px-3 text-zinc-500 dark:text-zinc-300">Social</h2>
 
           <div className="flex flex-col">
             <div className="space-y-0.5">
@@ -69,7 +77,7 @@ export function Header() {
                   key={href}
                   href={href}
                   target="_blank"
-                  className="flex items-center gap-2 rounded-lg px-3 py-2 hover:bg-zinc-200 active:bg-zinc-300"
+                  className="flex items-center gap-2 rounded-lg px-3 py-2 hover:bg-zinc-200 active:bg-zinc-300 dark:hover:bg-zinc-800 dark:active:bg-zinc-700"
                 >
                   {icon}
                   <span>{label}</span>
@@ -78,12 +86,10 @@ export function Header() {
               ))}
             </div>
           </div>
+
+          <ThemeToggle className="mx-2" />
         </div>
       )}
-
-      {/* <nav className="flex gap-11">
-        
-      </nav> */}
     </header>
   )
 }

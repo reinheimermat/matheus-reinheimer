@@ -20,7 +20,10 @@ interface CardImageProps extends CardProps<HTMLImageElement> {
 function CardRoot({ children, className }: CardProps<HTMLDivElement>) {
   return (
     <div
-      className={twMerge('space-y-4 rounded-[36px] bg-zinc-100 p-6', className)}
+      className={twMerge(
+        'shadow-shape space-y-4 rounded-[36px] border border-zinc-200 bg-zinc-100 p-6 shadow-zinc-900 dark:border-zinc-800 dark:bg-zinc-900',
+        className,
+      )}
     >
       {children}
     </div>
@@ -48,7 +51,7 @@ function CardExternalLink({ href, children }: CardProps<HTMLAnchorElement>) {
       rel="noreferrer"
       className="my-auto flex items-center justify-center rounded-full bg-lime-300 p-2 hover:bg-lime-400"
     >
-      <div>{children}</div>
+      <div className="text-zinc-900">{children}</div>
     </a>
   )
 }
@@ -66,7 +69,11 @@ function CardDescription({ children }: CardProps<HTMLTitleElement>) {
 }
 
 function CardText({ children, className }: CardProps<HTMLTitleElement>) {
-  return <p className={cn('text-zinc-700', className)}>{children}</p>
+  return (
+    <p className={cn('text-zinc-700 dark:text-zinc-300', className)}>
+      {children}
+    </p>
+  )
 }
 
 export const Card = {

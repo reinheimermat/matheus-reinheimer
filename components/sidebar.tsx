@@ -14,6 +14,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { twMerge } from 'tailwind-merge'
+import { ThemeToggle } from './ui/theme-toggle'
 
 export const links = [
   { href: '/', label: 'Home', icon: <House size={14} /> },
@@ -44,7 +45,7 @@ export function Sidebar() {
   const currentPath = usePathname()
 
   return (
-    <aside className="fixed hidden h-[calc(100vh-32px)] flex-col gap-5 rounded-bl-lg rounded-br-[36px] rounded-tl-[36px] rounded-tr-lg bg-zinc-100 px-4 py-6 text-sm md:flex md:w-auto lg:w-1/4 xl:max-w-72">
+    <aside className="fixed hidden h-[calc(100vh-32px)] flex-col gap-5 rounded-bl-lg rounded-br-[36px] rounded-tl-[36px] rounded-tr-lg border border-zinc-200 bg-zinc-100 px-4 py-6 text-sm shadow-shape dark:border-zinc-800 dark:bg-zinc-900 md:flex md:w-auto lg:w-1/4 xl:max-w-72">
       <div className="flex items-center gap-2">
         <Image
           src="https://github.com/reinheimermat.png"
@@ -63,8 +64,9 @@ export function Sidebar() {
             key={href}
             href={href}
             className={twMerge(
-              'flex items-center gap-2 rounded-lg px-3 py-2 text-zinc-950 transition-colors hover:bg-zinc-200 hover:transition-colors active:bg-zinc-300',
-              currentPath === href && 'bg-zinc-200 hover:bg-zinc-300',
+              'flex items-center gap-2 rounded-lg px-3 py-2 transition-colors hover:bg-zinc-200 hover:transition-colors active:bg-zinc-300 dark:hover:bg-zinc-800 dark:active:bg-zinc-700',
+              currentPath === href &&
+                'border border-zinc-300/50 bg-zinc-200 hover:border-zinc-300 hover:bg-zinc-300/70 dark:border-zinc-700 dark:bg-zinc-800 dark:hover:border-zinc-600 dark:hover:bg-zinc-700',
             )}
           >
             {icon}
@@ -73,7 +75,7 @@ export function Sidebar() {
         ))}
       </div>
 
-      <h2 className="px-3">Social</h2>
+      <h2 className="px-3 text-zinc-500 dark:text-zinc-300">Social</h2>
 
       <div className="flex flex-col">
         <div className="space-y-0.5">
@@ -82,7 +84,7 @@ export function Sidebar() {
               key={href}
               href={href}
               target="_blank"
-              className="flex items-center gap-2 rounded-lg px-3 py-2 hover:bg-zinc-200 active:bg-zinc-300"
+              className="flex items-center gap-2 rounded-lg px-3 py-2 hover:bg-zinc-200 active:bg-zinc-300 dark:hover:bg-zinc-800 dark:active:bg-zinc-700"
             >
               {icon}
               <span>{label}</span>
@@ -91,6 +93,8 @@ export function Sidebar() {
           ))}
         </div>
       </div>
+
+      <ThemeToggle />
     </aside>
   )
 }
