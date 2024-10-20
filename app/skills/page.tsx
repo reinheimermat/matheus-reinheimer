@@ -43,9 +43,7 @@ const frontend = [
   },
   {
     label: 'NextJS',
-    icon: (
-      <SiNextdotjs className="dar dark:text-whitek:text-white text-black" />
-    ),
+    icon: <SiNextdotjs className="text-black dark:text-white" />,
   },
   {
     label: 'Javascript',
