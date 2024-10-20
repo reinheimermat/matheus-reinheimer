@@ -31,12 +31,18 @@ export default function Home() {
           <>
             {projectsRepotitories.map((repo) => (
               <Card.Root key={repo.id}>
-                <Card.Image
-                  src={repo.banner}
-                  alt={repo.name}
-                  height={360}
-                  width={640}
-                />
+                <a
+                  href="#"
+                  className="block space-y-0 overflow-hidden rounded-3xl"
+                >
+                  <Card.Image
+                    src={repo.banner}
+                    alt={repo.name}
+                    height={360}
+                    width={640}
+                    className="transition-transform hover:scale-105 hover:transition-transform"
+                  />
+                </a>
                 <Card.Box className="flex items-center justify-between gap-2 space-y-0">
                   <Card.Box className="space-y-0 p-2">
                     <Card.Title>{repo.name}</Card.Title>
