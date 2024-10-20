@@ -11,6 +11,7 @@ import rocketseat from '@/assets/imgs/rocketseat.jpg'
 import uniasselvi from '@/assets/imgs/uniasselvi.png'
 import qi from '@/assets/imgs/qi.png'
 import alura from '@/assets/imgs/alura.jpg'
+import * as motion from 'framer-motion/client'
 
 export default function Home() {
   const data = useGitHubAutomatedRepos('reinheimermat', 'deploy')
@@ -19,12 +20,31 @@ export default function Home() {
     (repo) => repo.name !== 'reinheimermat',
   )
 
+  const animation = {
+    initial: {
+      opacity: 0,
+      y: 100,
+    },
+    animate: {
+      opacity: 1,
+      y: 0,
+    },
+    transition: {
+      duration: 1,
+    },
+  }
+
   return (
-    <div className="space-y-10 md:space-y-20">
-      <h1 className="mx-auto py-9 text-center md:text-2xl lg:text-4xl xl:text-6xl">
+    <motion.div className="space-y-10 md:space-y-20">
+      <motion.h1
+        initial={animation.initial}
+        animate={animation.animate}
+        transition={animation.transition}
+        className="mx-auto py-9 text-center md:text-2xl lg:text-4xl xl:text-6xl"
+      >
         Hi, I&apos;m Matheus, a Frontend Developer, <br />
         crafting system and experiences.
-      </h1>
+      </motion.h1>
 
       <section className="grid grid-cols-1 gap-6 xl:grid-cols-2">
         {specialRepository ? (
@@ -50,7 +70,6 @@ export default function Home() {
                       <Card.Description>{repo.description}</Card.Description>
                     )}
                   </Card.Box>
-
                   <Card.ExternalLink href={repo.html_url}>
                     <ArrowUpRight size={24} />
                   </Card.ExternalLink>
@@ -235,6 +254,6 @@ export default function Home() {
           </Card.Box>
         </Card.Box>
       </Card.Root>
-    </div>
+    </motion.div>
   )
 }

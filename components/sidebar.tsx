@@ -15,6 +15,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { twMerge } from 'tailwind-merge'
 import { ThemeToggle } from './ui/theme-toggle'
+import * as motion from 'framer-motion/client'
 
 export const links = [
   { href: '/', label: 'Home', icon: <House size={14} /> },
@@ -43,9 +44,31 @@ export const externalLinks = [
 
 export function Sidebar() {
   const currentPath = usePathname()
+  const animation = {
+    initial: {
+      x: -100,
+      opacity: 0,
+    },
+    animate: {
+      x: 0,
+      opacity: 1,
+    },
+    exit: {
+      x: -100,
+    },
+    transition: {
+      duration: 1,
+    },
+  }
 
   return (
-    <aside className="fixed hidden h-[calc(100vh-32px)] flex-col gap-5 rounded-bl-lg rounded-br-[36px] rounded-tl-[36px] rounded-tr-lg bg-zinc-100 px-4 py-6 text-sm dark:bg-zinc-900 dark:shadow-shape md:flex md:w-auto lg:w-1/4 xl:max-w-72">
+    <motion.aside
+      initial={animation.initial}
+      animate={animation.animate}
+      exit={animation.exit}
+      transition={animation.transition}
+      className="fixed hidden h-[calc(100vh-32px)] flex-col gap-5 rounded-bl-lg rounded-br-[36px] rounded-tl-[36px] rounded-tr-lg bg-zinc-100 px-4 py-6 text-sm dark:bg-zinc-900 dark:shadow-shape md:flex md:w-auto lg:w-1/4 xl:max-w-72"
+    >
       <div className="flex items-center gap-2">
         <Image
           src="https://github.com/reinheimermat.png"
@@ -95,6 +118,6 @@ export function Sidebar() {
       </div>
 
       <ThemeToggle />
-    </aside>
+    </motion.aside>
   )
 }

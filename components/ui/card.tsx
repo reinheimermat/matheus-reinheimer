@@ -3,6 +3,7 @@ import Image, { type StaticImageData } from 'next/image'
 import type React from 'react'
 import type { ReactNode } from 'react'
 import { twMerge } from 'tailwind-merge'
+import * as motion from 'framer-motion/client'
 
 interface CardProps<T> extends React.HTMLAttributes<T> {
   children?: ReactNode
@@ -18,15 +19,32 @@ interface CardImageProps extends CardProps<HTMLImageElement> {
 }
 
 function CardRoot({ children, className }: CardProps<HTMLDivElement>) {
+  const animate = {
+    initial: {
+      opacity: 0,
+      y: 100,
+    },
+    animate: {
+      opacity: 1,
+      y: 0,
+    },
+    transition: {
+      duration: 1,
+    },
+  }
+
   return (
-    <div
+    <motion.div
+      initial={animate.initial}
+      animate={animate.animate}
+      transition={animate.transition}
       className={twMerge(
         'space-y-4 rounded-[36px] bg-zinc-100 p-6 dark:bg-zinc-900 dark:shadow-shape',
         className,
       )}
     >
       {children}
-    </div>
+    </motion.div>
   )
 }
 
