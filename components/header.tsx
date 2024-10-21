@@ -23,6 +23,12 @@ export function Header() {
     if (isMenuOpenInUrl) {
       setIsMenuOpenInUrl(null)
     }
+
+    if (!isMenuOpenInUrl) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'auto'
+    }
   }
 
   return (
