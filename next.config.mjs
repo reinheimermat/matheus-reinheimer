@@ -8,6 +8,9 @@ const nextConfig = {
       'github.com',
     ],
   },
+  experimental: {
+    missingSuspenseWithCSRBailout: true,
+  },
 }
 
 export default nextConfig
