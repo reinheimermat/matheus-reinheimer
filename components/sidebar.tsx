@@ -16,6 +16,7 @@ import { usePathname } from 'next/navigation'
 import { twMerge } from 'tailwind-merge'
 import { ThemeToggle } from './ui/theme-toggle'
 import * as motion from 'framer-motion/client'
+import { useEffect, useState } from 'react'
 
 export const links = [
   { href: '/', label: 'Home', icon: <House size={14} /> },
@@ -44,6 +45,12 @@ export const externalLinks = [
 
 export function Sidebar() {
   const currentPath = usePathname()
+  const [isClient, setIsClient] = useState(false)
+
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
+
   const animation = {
     initial: {
       x: -100,
@@ -60,6 +67,8 @@ export function Sidebar() {
       duration: 1,
     },
   }
+
+  if (!isClient) return null
 
   return (
     <motion.aside
