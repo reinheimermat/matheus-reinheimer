@@ -2,31 +2,26 @@
 
 import { ExternalLink, Menu, X } from 'lucide-react'
 import Image from 'next/image'
-import { usePathname, useRouter, useSearchParams } from 'next/navigation'
+import { usePathname } from 'next/navigation'
 import { twMerge } from 'tailwind-merge'
 import { externalLinks, links } from './sidebar'
 import Link from 'next/link'
 import { ThemeToggle } from './ui/theme-toggle'
-import { useEffect } from 'react'
+import { useQueryState } from 'nuqs'
 
 export function Header() {
   const currentPath = usePathname()
-  const router = useRouter()
-  const searchParams = useSearchParams()
-
-  const isMenuOpenInUrl = searchParams.get('menu') === 'open'
-
-  useEffect(() => {
-    document.body.style.overflow = isMenuOpenInUrl ? 'hidden' : 'auto'
-  }, [isMenuOpenInUrl])
+  const [isMenuOpenInUrl, setIsMenuOpenInUrl] = useQueryState('menu', {
+    defaultValue: false,
+    parse: (value) => value === 'open',
+    serialize: (value) => (value ? 'open' : 'closed'),
+  })
 
   function handleMenuOpen() {
-    const newMenuState = isMenuOpenInUrl ? null : 'open'
+    setIsMenuOpenInUrl(!isMenuOpenInUrl)
 
-    if (newMenuState) {
-      router.push(`?menu=${newMenuState}`)
-    } else {
-      router.push(currentPath)
+    if (isMenuOpenInUrl) {
+      setIsMenuOpenInUrl(null)
     }
   }
 
